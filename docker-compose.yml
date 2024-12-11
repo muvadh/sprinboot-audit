@@ -12,7 +12,7 @@ services:
       MYSQL_USER: al_user
       MYSQL_PASSWORD: al_pwd
     volumes:
-      - /Users/murugapandian/PROJECTS/WORKOUT/audits/src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql  # relative path
     networks:
       - al_network
 
