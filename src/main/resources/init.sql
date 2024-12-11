@@ -1,0 +1,2 @@
+GRANT ALL PRIVILEGES ON aldb.* TO 'al_user'@'%';
+FLUSH PRIVILEGES;

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: al_db
+    ports:
+      - "3500:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: aldb
+      MYSQL_USER: al_user
+      MYSQL_PASSWORD: al_pwd
+    volumes:
+      - /Users/murugapandian/PROJECTS/WORKOUT/audits/src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - al_network
+
+volumes:
+  mysql_data:
+
+networks:
+  al_network:
+    driver: bridge
